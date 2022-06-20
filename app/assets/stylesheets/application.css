@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.box {
+  margin: 15px 0;
+}
