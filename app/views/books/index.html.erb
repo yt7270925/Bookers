@@ -2,32 +2,35 @@
 
 <% @books.each do |book| %>
 
- <div class="book">
-  <p>Title</p>
-  <span><%= book.title %></span>
+  <table>
+   <thead>
+    <tr>
+     <th>Title</th>
+     <th>Body</th>
+     <th coltd="3"></th>
+    </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td><%= book.title %></td>
+       <td class="index-body-text"><%= book.body %></td>
+       <td class="link"><%= link_to 'Show', book_path(book.id) %>--></td>
+       <td class="link"><%= link_to 'Edit', book_path(book.id) %>--></td>
+       <td class="link"><%= link_to "Dstroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>--></td>
+     </tr>
+   </tbody>
+  </table>
 
-  <p>Body</p>
-  <span><%= book.body %></span>
-
-  <span>
-   <%= link_to 'Show', show_path(book.id) %>
-  </span>
-  <span>
-   <%= link_to 'Edit', edit_path(book.id) %>
-  </span>
-  <span>
-   <%= link_to 'Destroy', "destoroy" %>
-  </span>
-  </div>
-<% end %>
+ <% end %>
 
 <h2>New Book</h2>
 <%= form_with model: @book, url: 'books', method: :post do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
 
-  <h4>Body</h4>
-  <%= f.text_area :body %>
+  <h4 class="index-box">Title</h4>
+  <div><%= f.text_field :title %></div>
+
+  <h4 class="index-box">Body</h4>
+  <div><%= f.text_area :body %></div>
 
  <div class="box">
   <%= f.submit 'Create Book' %>
