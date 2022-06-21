@@ -15,7 +15,7 @@
        <td><%= book.title %></td>
        <td class="index-body-text"><%= book.body %></td>
        <td class="link"><%= link_to 'Show', book_path(book.id) %>--></td>
-       <td class="link"><%= link_to 'Edit', book_path(book.id) %>--></td>
+       <td class="link"><%= link_to 'Edit', edit_book_path(book.id) %>--></td>
        <td class="link"><%= link_to "Dstroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>--></td>
      </tr>
    </tbody>
@@ -24,7 +24,7 @@
  <% end %>
 
 <h2>New Book</h2>
-<%= form_with model: @book, url: 'books', method: :post do |f| %>
+<%= form_with model: Book.new, url: 'books', method: :post do |f| %>
 
   <h4 class="index-box">Title</h4>
   <div><%= f.text_field :title %></div>
