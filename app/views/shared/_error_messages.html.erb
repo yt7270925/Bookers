@@ -1,0 +1,11 @@
+#shared/_error_messages.html.erb
+
+<% if @book.errors.any? %>
+  <div class="alert alert-danger">
+    <ul class="mb-0">
+      <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

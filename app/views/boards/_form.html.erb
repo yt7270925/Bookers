@@ -1,0 +1,6 @@
+#app/views/boards/_form.html.erb(パーシャルを呼び出し)
+
+<%= form_with model: board, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>※
+  <div class="form-group">
+    <%= f.label :title %>

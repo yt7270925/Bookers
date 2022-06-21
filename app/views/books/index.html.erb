@@ -24,7 +24,28 @@
  <% end %>
 
 <h2>New Book</h2>
-<%= form_with model: Book.new, url: 'books', method: :post do |f| %>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>Error prohibited this book from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<!--<% if @book.errors.any? %>-->
+<!--  <div class = "alert">-->
+<!--    <ul>-->
+<!--      <% user.errors.full_messages.each do |message| %>-->
+<!--        <li><%= message %></li>-->
+<!--        <%= render 'Error prohibited this book from being saved:', locals: { user: @book } %>-->
+<!--      <% end %>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--<% end %>-->
+
+<%= form_with model: @book, url: 'books', method: :post do |f| %>
 
   <h4 class="index-box">Title</h4>
   <div><%= f.text_field :title %></div>
