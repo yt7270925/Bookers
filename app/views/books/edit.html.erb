@@ -2,7 +2,7 @@
 
 <!-- validation -->
 <% if @book.errors.any? %>
- <div><%= @book.errors.count %>Error prohibited this book from being saved:</div>
+ <div><%= @book.errors.count %>error prohibited this book from being saved:</div>
  <% @book.errors.full_messages.each do |message| %>
   <div><%= message %></div>
  <% end %>
