@@ -1,6 +1,9 @@
 <h1>Books</h1>
 
-<% @books.each do |book| %>
+<!-- @bookではundefined method `each' for nil:NilClassのエラー
+が出たがBook.allにしたらいった-->
+<% Book.all.each do |book| %>
+
 
   <table>
    <thead>
@@ -24,26 +27,14 @@
  <% end %>
 
 <h2>New Book</h2>
+
+<!-- validation -->
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>Error prohibited this book from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+ <div><%= @book.errors.count %>Error prohibited this book from being saved:</div>
+ <% @book.errors.full_messages.each do |message| %>
+  <div><%= message %></div>
+ <% end %>
 <% end %>
-
-
-<!--<% if @book.errors.any? %>-->
-<!--  <div class = "alert">-->
-<!--    <ul>-->
-<!--      <% user.errors.full_messages.each do |message| %>-->
-<!--        <li><%= message %></li>-->
-<!--        <%= render 'Error prohibited this book from being saved:', locals: { user: @book } %>-->
-<!--      <% end %>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--<% end %>-->
 
 <%= form_with model: @book, url: 'books', method: :post do |f| %>
 
@@ -55,5 +46,5 @@
 
  <div class="box">
   <%= f.submit 'Create Book' %>
- </box>
+ </div>
 <% end %>
