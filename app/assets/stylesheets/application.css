@@ -20,7 +20,35 @@
     box-sizing: border-box;
 }
 
- table {
+/* success messages */
+.text-success {
+    color: #008000;
+}
+
+/* top */
+.start-link {
+    padding-left: 30px;
+}
+
+/* index */
+h1 {
+    padding-bottom: 15px;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+a:visited {
+    color: #666;
+}
+
+table {
     display: table;
     border-collapse: separate;
     box-sizing: border-box;
@@ -44,19 +72,31 @@ tr {
 th {
     padding-bottom: 5px;
     padding-left: 80px;
+    width: 200px;
 }
 
+td {
+    line-height: inherit;
+    padding-right: 5px;
+}
+
+.index-title-text {
+    word-break: break-all;
+}
 
 .index-body-text {
     padding-left: 40px;
+    word-break: break-all;
+    width: 300px;
 }
 
 .link {
-    text-align: right;
+    line-height: !important;
 }
 
-a {
-    color: #000;
+/* new */
+h2 {
+    margin-top: 15px;
 }
 
 .index-box {
@@ -66,4 +106,16 @@ a {
 
 .box {
   margin: 15px 0;
+}
+
+/* show */
+.show {
+    margin: 5px 0 30px 45px ;
+    font-size: 13px;
+}
+
+/* edit */
+.edit-box {
+    margin-top: 15px;
+    font-family: serif;
 }

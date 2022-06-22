@@ -1,7 +1,7 @@
-<h4>Title:<%= @book.title %></h4>
+<p class="show"><strong>Title:</strong><%= @book.title %></p>
 
 
-<h4>Body:<%= @book.body %></h4>
+<p class="show"><strong>Body:</strong><%= @book.body %></p>
 
 <span class="edit-blank">
   <%= link_to 'Edit', edit_book_path(@book.id) %>

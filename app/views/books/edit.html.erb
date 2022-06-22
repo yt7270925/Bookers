@@ -10,13 +10,13 @@
 
 <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
-  <h4>Title</h4>
+  <h4 class="edit-box">Title</h4>
   <%= f.text_field :title %>
 
-  <h4>Body</h4>
+  <h4 class="edit-box">Body</h4>
   <%= f.text_area :body %>
 
-<div class="box">>
+<div class="box">
   <%= f.submit 'Update Book' %>
 </div
 <% end %>
